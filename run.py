@@ -17,7 +17,7 @@ def main(targets):
     if 'model' in targets:
         with open('gpt2/webnlg_models/webnlgprefixtune_y_5_act_cat_b=5-e=5_d=0.0_u=no_lr=5e-05_w=0.0_s=10_r=n_m=512_o=1_o=1/config.json') as fh:
             model_cfg = json.load(fh)
-
+            print(model_cfg)
     if 'test' in targets:
         os.chdir("gpt2/webnlg_models/webnlgprefixtune_y_5_act_cat_b=5-e=5_d=0.0_u=no_lr=5e-05_w=0.0_s=10_r=n_m=512_o=1_o=1")
         files = [f for f in os.listdir('.') if os.path.isfile(f)]
