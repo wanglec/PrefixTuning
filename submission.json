@@ -1,0 +1,4 @@
+{
+    "dockerhub-id": "l6wang/dsc180_method_3",
+    "build-script": "python run.py test"
+}

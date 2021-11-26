@@ -789,13 +789,13 @@ def main():
 
         else:
             if ('lowdata' in args.model_name_or_path) or (args.prefixModel_name_or_path is not None and 'lowdata' in args.prefixModel_name_or_path):
-                test_path = '/u/scr/xlisali/e2e_data/src1_valid.txt'
+                test_path = '../data/e2e_data/src1_valid.txt'
             else:
 
                 if args.eval_dataset == 'valid':
-                    test_path = '/u/scr/xlisali/e2e_data/src1_valid.txt'
+                    test_path = '../data/e2e_data/src1_valid.txt'
                 elif args.eval_dataset == 'test':
-                    test_path = '/u/scr/xlisali/e2e_data/src1_test.txt'
+                    test_path = '../data/e2e_data/src1_test.txt'
 
             print('using the test path ', test_path)
             if args.prefixModel_name_or_path is not None:
@@ -814,16 +814,16 @@ def main():
             prompt_text_lst = list(prompt_text_dict.keys())
             split_file = args.eval_dataset
             decode_mode = 'beam'
-            curr_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            curr_dir = os.path.join('./res/',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, decode_mode))
             print(curr_dir)
-            gold_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            gold_dir = os.path.join('./res/',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file,'gold'))
             print(gold_dir)
             write_e2e_corr(prompt_text_lst, prompt_text_dict, gold_dir)
-            src_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            src_dir = os.path.join('./res/',
                                    args.gen_dir,
                                    '{}_{}_{}'.format(temp,split_file, 'src'))
             write_e2e_src(prompt_text_lst, src_dir)
@@ -834,9 +834,9 @@ def main():
         QUICK_CHECK = False
         if args.task_mode == 'webnlg':
             if args.eval_dataset == 'valid':
-                test_path = "/u/scr/xlisali/WebNLG/webnlg-dataset/webnlg_challenge_2017/dev.json"
+                test_path = "../data/webnlg_challenge_2017/dev.json"
             elif args.eval_dataset == 'test':
-                test_path = "/u/scr/xlisali/WebNLG/webnlg-dataset/webnlg_challenge_2017/test.json"
+                test_path = "../data/webnlg_challenge_2017/test.json"
             else:
                 assert False,  "eval_dataset needs to be [valid, test]"
             prompt_text_dict = read_webnlg_files(test_path, tokenizer)
@@ -859,16 +859,16 @@ def main():
                 temp = os.path.basename(args.model_name_or_path)
             split_file = args.eval_dataset # test
             decode_mode = 'beam'
-            curr_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            curr_dir = os.path.join('./res/',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, decode_mode))
             print(curr_dir)
-            gold_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            gold_dir = os.path.join('./res/',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, 'gold'))
             print(gold_dir)
             write_e2e_corr(prompt_text_pair, prompt_text_dict, gold_dir)
-            src_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            src_dir = os.path.join('./res/',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, 'src'))
             write_e2e_src(prompt_text_pair, src_dir)
@@ -904,13 +904,13 @@ def main():
             # print(prompt_text_dict)
             split_file = 'test' # test
             decode_mode = 'greedy'
-            curr_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            curr_dir = os.path.join('./res/',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, decode_mode))
             # curr_dir = '/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/classify_results/{}_{}_{}'.format(
             #     temp, split_file, decode_mode)
             print(curr_dir)
-            gold_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            gold_dir = os.path.join('./res/',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, 'gold'))
             # gold_dir = '/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/classify_results/{}_{}_{}'.format(
@@ -919,7 +919,7 @@ def main():
             #     'gold')
             print(gold_dir)
             write_e2e_src(prompt_text_tgt, gold_dir)
-            src_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            src_dir = os.path.join('./res/',
                                    args.gen_dir,
                                    '{}_{}_{}'.format(temp, split_file, 'src'))
             # src_dir = '/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/classify_results/{}_{}_{}'.format(
@@ -958,13 +958,13 @@ def main():
             # print(prompt_text_dict)
             split_file = 'test' # test
             decode_mode = 'beam'
-            curr_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            curr_dir = os.path.join('./res/',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, decode_mode))
 
 
             print(curr_dir)
-            gold_dir = os.path.join('/u/scr/xlisali/contrast_LM/transformers/examples/text-generation/',
+            gold_dir = os.path.join('./res/',
                                     args.gen_dir,
                                     '{}_{}_{}'.format(temp, split_file, 'gold'))
             print(gold_dir)

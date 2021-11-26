@@ -64,7 +64,7 @@ if __name__ == '__main__':
     parser.add_argument('--matching_objective', type=str, default='kl', help='kl or logits')
 
     # Added by MX
-    parser.add_argument('--cache_dir', type=str, default='/u/scr/xlisali/contrast_LM/transformers/examples/control', help='cache dir')
+    parser.add_argument('--cache_dir', type=str, default='cache/', help='cache dir')
     parser.add_argument('--use_custom_teacher_dropout', type=str, default='no', help='')
 
 
@@ -185,8 +185,8 @@ if __name__ == '__main__':
 
     elif args.mode == 'webnlg':
         # 2017 Challeng Version.
-        TRAIN_FILE = "/u/scr/xlisali/WebNLG/webnlg-dataset/webnlg_challenge_2017/train.json"
-        TEST_FILE = "/u/scr/xlisali/WebNLG/webnlg-dataset/webnlg_challenge_2017/dev.json"
+        TRAIN_FILE = "../data/webnlg_challenge_2017/train.json"
+        TEST_FILE = "../data/webnlg_challenge_2017/dev.json"
 
         # v2
         # TRAIN_FILE = "/u/scr/xlisali/WebNLG/webnlg-dataset/release_v2/json/webnlg_release_v2_train.json"
